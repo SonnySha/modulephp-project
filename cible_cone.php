@@ -62,9 +62,9 @@ if($noErrors) {
     define('MATH_PI', 3.141592);
     // Calcul du volume
     $volume = MATH_PI *
-            $_POST['rayon_base_cone'] *
-            $_POST['rayon_base_cone'] *
-            $_POST['hauteur_cone'] / 3;
+            floatval($_POST['rayon_base_cone']) *
+            floatval($_POST['rayon_base_cone']) *
+            floatval($_POST['hauteur_cone']) / 3;
     // Affichage de la phrase
     echo "Le volume du cône " . htmlspecialchars($_POST['nom_cone']) .
             " est : " . round($volume, 2);

@@ -1,4 +1,4 @@
-<form action="cible_cone.php" method="post">
+<form action="cone.php" method="post">
     <p>
         <label for="nom-cone">Nom du cône</label>
         <br />
