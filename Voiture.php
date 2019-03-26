@@ -11,10 +11,37 @@ class Voiture {
     // Méthodes
 
     /**
+    * Méthode magique appelée automatiquement lors de l'instanciation de la classe
+    */
+    public function __construct($initMarque, $initNombrePlaces, $initEstDemarree) {
+        $this->setMarque($initMarque);
+        $this->setNombrePlaces($initNombrePlaces);
+        $this->setEstDemarree($initEstDemarree);
+    }
+
+    /**
+    * Méthode magique appelée automatiquement lors de l'instanciation de la classe
+    */
+    public function __toString() {
+        return 'Le voiture de marque ' . $this->getMarque() .
+                ' a ' . $this->getNombrePlaces() . ' places et ' .
+                $this->getEstDemarree();
+    }
+
+    /**
     * Accesseur pour l'attribut $marque
     */
     public function getMarque() {
         return $this->marque;
+    }
+
+    /**
+    * Mutateur pour l'attribut $marque
+    *
+    * @param String $newMarque Nouvelle valeur pour l'attribut marque
+    */
+    public function setMarque($newMarque) {
+        $this->marque = $newMarque;
     }
 
     /**
@@ -25,18 +52,34 @@ class Voiture {
     }
 
     /**
+    * Mutateur pour l'attribut $nombrePlaces
+    *
+    * @param Integer $newNombrePlace Nouvelle valeur pour l'attribut nombrePlaces
+    */
+    public function setNombrePlaces($newNombrePlaces) {
+        if(!is_int($newNombrePlaces)) {
+            echo "Le nombre de places doit être un entier !";
+            return;
+        }
+        $this->nombrePlaces = $newNombrePlaces;
+    }
+
+    /**
     * Accesseur pour l'attribut $estDemarree
     */
     public function getEstDemarree() {
-        if($this->estDemarree) {
-            return "La voiture est démarrée";
-        } else {
-            return "La voiture n'est pas démarrée";
-        }
-
         return $this->estDemarree ? 
                 "La voiture est démarrée" :
                 "La voiture n'est pas démarrée";
+    }
+
+    /**
+    * Mutateur pour l'attribut $estDemarree
+    *
+    * @param Boolean $newNombrePlace Nouvelle valeur pour l'attribut estDemarree
+    */
+    public function setEstDemarree($newEstDemarree) {
+        $this->estDemarree = $newEstDemarree;
     }
 
     /**
