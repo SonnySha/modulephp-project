@@ -88,8 +88,8 @@ $response = $bdd->query($query);
         <input type="submit" value="Inscription">
     </form>
 
-    <h1>Connection</h1>
-    <form action="account_connect.php" method="post">
+    <h1>Connexion</h1>
+    <form action="account_signin.php" method="post">
         <p>
             <label for="mail_user">Votre mail</label>
             <br />
@@ -99,7 +99,7 @@ $response = $bdd->query($query);
             <br />
             <input type="text" id="password" name="password-connection" placeholder="Entrez votre mot de passe">
         </p>
-        <input type="submit" value="Connection">
+        <input type="submit" value="Connexion">
     </form>
 </body>
 </html>
