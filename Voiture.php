@@ -11,7 +11,8 @@ class Voiture {
     // Méthodes
 
     /**
-    * Méthode magique appelée automatiquement lors de l'instanciation de la classe
+    * Méthode magique appelée automatiquement lors de l'instanciation de la classe :
+    * contructeur
     */
     public function __construct($initMarque, $initNombrePlaces, $initEstDemarree) {
         $this->setMarque($initMarque);
@@ -20,7 +21,8 @@ class Voiture {
     }
 
     /**
-    * Méthode magique appelée automatiquement lors de l'instanciation de la classe
+    * Méthode magique appelée automatiquement lorsque l'objet est traité comme une chaîne de caractères :
+    * afficheur
     */
     public function __toString() {
         return 'Le voiture de marque ' . $this->getMarque() .
